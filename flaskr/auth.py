@@ -61,6 +61,9 @@ def login():
         flash(error)
     return render_template('auth/login.html')
 
+@bp.route('/newpassword', methods=('GET', 'POST'))
+def
+
 @bp.before_app_request
 def load_logged_in_user():
     user_id = session.get('user_id')
@@ -82,5 +85,5 @@ def login_required(view):
     def wrapped_view(**kwargs):
         if g.user is None:
             return redirect(url_for('auth.login'))
-
-        return wrapped_view
+        return view(**kwargs)
+    return wrapped_view
