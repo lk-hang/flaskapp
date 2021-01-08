@@ -61,8 +61,8 @@ def login():
         flash(error)
     return render_template('auth/login.html')
 
-@bp.route('/newpassword', methods=('GET', 'POST'))
-def
+# @bp.route('/newpassword', methods=('GET', 'POST'))
+# def
 
 @bp.before_app_request
 def load_logged_in_user():
